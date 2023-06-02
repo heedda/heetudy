@@ -4,7 +4,9 @@ import com.example.spring1.controller.dto.request.CreateFeedRequest;
 import com.example.spring1.controller.dto.response.FeedResponse;
 import com.example.spring1.controller.dto.response.NameResponse;
 import com.example.spring1.controller.dto.response.NumResponse;
+import com.example.spring1.repository.FeedRepository;
 import com.example.spring1.service.CreateFeedService;
+import com.example.spring1.service.DeleteFeedService;
 import com.example.spring1.service.QueryFeedService;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -19,6 +21,7 @@ import javax.validation.Valid;
 public class FeedController {
     private final CreateFeedService createFeedService;
     private final QueryFeedService queryFeedService;
+    private final DeleteFeedService deleteFeedService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
@@ -44,5 +47,10 @@ public class FeedController {
     @GetMapping("/{id}")
     public FeedResponse getFeed(@PathVariable("id") Long id) {
         return queryFeedService.execute(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFeed(@PathVariable("id") Long id){
+        deleteFeedService.execute(id);
     }
 }
