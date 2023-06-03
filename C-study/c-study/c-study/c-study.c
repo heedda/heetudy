@@ -4403,20 +4403,20 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 	//	average();
 	//}
 
-	//#include <stdio.h>
-	//char change (char a) {
-	//	if (a <= 122 && a >= 97) return a - 32;
-	//	else if (65 <= a && 90 >= a) return a + 32;
-	//	else  return a;
-	//}
-	//int main() {
-	//	char a[1001];
-	//	for (int i = 0;i < 1001;i++){
-	//		scanf("%c", &a[i]);
-	//		if (a[i] == '\0' || a[i] == '\n') break;
-	//		printf("%c", change(a[i]));
-	//	}
-	//}
+	/*#include <stdio.h>
+	char change (char a) {
+		if (a <= 122 && a >= 97) return a - 32;
+		else if (65 <= a && 90 >= a) return a + 32;
+		else  return a;
+	}
+	int main() {
+		char a[1001];
+		for (int i = 0;i < 1001;i++){
+			scanf_s("%c", &a[i]);
+			if (a[i] == '\0' || a[i] == '\n') break;
+			printf("%c", change(a[i]));
+		}
+	}*/
 
 	//#include <stdio.h>
 	//int main() {
@@ -4512,12 +4512,12 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 
 //#include <stdio.h>
 //int main() {
-//	int a[100] = { 0 }, b, c;
-//	scanf_s("%d", &b);
-//	for (int i = 0;i < b;i++) {
-//		scanf_s("%d", &a[i]);
+//	int a[10000] = { 0 }, b;
+//	scanf("%d", &b);
+//	for (int i = 1;i <= b;i++) {
+//		scanf("%d", &a[i]);
 //	}
-//	for (int i = b;i >= 0;i--) {
+//	for (int i = b;i > 0;i--) {
 //		printf("%d ", a[i]);
 //	}
 //}
