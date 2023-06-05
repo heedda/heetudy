@@ -4521,3 +4521,95 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //		printf("%d ", a[i]);
 //	}
 //}
+
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	for (int i = a;i >= 1;i--) {
+//		for (int j = 1;j < i;j++) {
+//			printf(" ");
+//		}
+//		for (int j = 1;j <= a;j++) {
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a, b;
+//	char c;
+//	scanf("%d %d %c", &a, &b, &c);
+//	if (c == 'R') {
+//		for (int i = a;i >= 1;i--) {
+//			for (int j = 1;j < i;j++) {
+//				printf(" ");
+//			}
+//			for (int j = 1;j <= b;j++) {
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	else {
+//		for (int i = 1;i <= a;i++) {
+//			for (int j = 1;j < i;j++) {
+//				printf(" ");
+//			}
+//			for (int j = 1;j <= b;j++) {
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//	}
+//}
+
+//#include <stdio.h>
+//void star(int a) {
+//	for (int i = 1;i <= a * 2 - 1;i++) {
+//		if (i < a+1) {
+//			for (int j = 1;j < i;j++) {
+//				printf(" ");
+//			}
+//			printf("*\n");
+//		}
+//		else {
+//			for (int j = a*2-1;j > i;j--) {
+//				printf(" ");
+//			}
+//			printf("*\n");
+//		}
+//	}
+//}
+//int main() {
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	for (int i = 1;i <= b;i++) {
+//		star(a);
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a, b = 0, j;
+//	scanf("%d", &a);
+//	for (int i = 1;i <= a;i++) {
+//		for (j = 1;j <= i;j++) {
+//			b += j;
+//		}
+//	}
+//	printf("%d", b);
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	for (int i = 1;i <= 6;i++) {
+//		for (int j = 1;j <= 6;j++) {
+//			if (i + j == a)printf("%d %d\n", i, j);
+//		}
+//	}
+//}

@@ -34,7 +34,7 @@ public class FeedController {
         return yabbi;
     }
 
-    @GetMapping("/name")
+    @GetMapping("/name")//without Param
     public NameResponse getName(@RequestParam("name") String name){
         return new NameResponse(name);
     }
