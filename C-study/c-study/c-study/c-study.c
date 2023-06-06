@@ -4613,3 +4613,96 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //		}
 //	}
 //}
+
+//#include <stdio.h>
+//int main() {
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	for (int i = 1;i <= b;i++) {
+//		for (int j = 1;j <= a;j++) {
+//			if ((i == 1 || i == b) && (j == 1 || j == a)) printf("+");
+//			else if ((i == 1 || i == b) && (j != 1 || j != b)) printf("-");
+//			else if ((i != 1 || i != b) && (j == 1 || j == a)) printf("|");
+//			else printf(" ");
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	for (int i = 1;i <= a;i++) {
+//		for (int j = 1;j <= a - i;j++) {
+//			printf(" ");
+//		}
+//		for (int j = 1;j <= i * 2 - 1;j++) {
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	for (int i = a;i > 1;i--) {
+//		for (int j = a;j >= i;j--) {
+//			printf(" ");
+//		}
+//		for (int j = 1;j <= i * 2 - 3;j++) {
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a, b, c = 24;
+//	scanf("%d", &b);
+//	for (int i = 1;i <= b;i++) {
+//		scanf("%d", &a);
+//		c = (a < c) ? a : c;
+//	}
+//	printf("%d", c);
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a[1000], b;
+//	scanf("%d", &b);
+//	for (int i = 0;i < b;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	for (int i = b-1;i >= 0;i--) {
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a[100], b;
+//	scanf("%d", &b);
+//	for (int i = 0;i < b;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	for (int i = 1;i <= 2;i++) {
+//		for (int j = 0;j < b;j++) {
+//			printf("%d\n", a[j]);
+//		}
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a[1000], b, c;
+//	scanf("%d", &b);
+//	for (int i = 0;i < b;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	for (int i = 1;i <= b;i++) {
+//		for (int j = 0;j < b;j++) {//코드업 미완성 1405
+//			printf("%d ", a[j]);
+//			c = a[b];
+//			a[]
+//		}
+//		printf("\n");
+//	}
+//}
