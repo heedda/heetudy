@@ -4706,3 +4706,26 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //		printf("\n");
 //	}
 //}
+
+//#include <stdio.h>
+//int main() {
+//	int a[11] = { 0 }, b;
+//	for (int i = 1;i <= 10;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	scanf("%d", &b);
+//	printf("%d", a[b]);
+//}
+
+//#include <stdio.h>
+//int main() {
+//	char a[100000] = { 0 };
+//	int rhkf1 = 0, rhkf2 = 0;
+//	for (int i = 0;i < 100000;i++) {
+//		scanf("%c", &a[i]);
+//		if (a[i] == 40) rhkf1++;
+//		else if (a[i] == 41) rhkf2++;
+//		if (a[i] == '\n' || a[i] == '\0') break;
+//	}
+//	printf("%d %d", rhkf1, rhkf2);
+//}
