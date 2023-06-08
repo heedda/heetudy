@@ -4729,3 +4729,46 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	}
 //	printf("%d %d", rhkf1, rhkf2);
 //}
+
+//#include <stdio.h>
+//int main() {
+//	int a[51] = { 0 }, b, c = 0;
+//	scanf("%d", &b);
+//	for (int i = 1;i <= b;i++) {
+//		c += i;
+//	}
+//	for (int i = 1;i < b;i++) {
+//		scanf("%d", &a[i]);
+//		c -= a[i];
+//	}
+//	printf("%d", c);
+//}
+
+//#include <stdio.h>
+//int main() {
+//	char a[10000], c = 97;
+//	int b[26] = { 0 };
+//	for (int i = 0;i < 10000;i++) {
+//		scanf("%c", &a[i]);
+//		if (a[i] == '\n' || a[i] == '\0') break;
+//		b[a[i] - 97]++;
+//	}
+//	for (int i = 0;i < 26;i++) {
+//		printf("%c:%d\n", c++, b[i]);
+//	}
+//}
+
+//#include <stdio.h>
+//void ten_to_two(unsigned n) {
+//	unsigned a = 0x80000000; // 1000 0000 0000 0000 0000 0000 0000 0000(2) <약 21억>
+//	for (int i = 0; i < 32; i++) {
+//		if ((a & n) == a) printf("1");//코드업 미완성 2진수 변환하는 것
+//		else printf("0");
+//		a >>= 1;
+//	}
+//}
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	ten_to_two(a);
+//}
