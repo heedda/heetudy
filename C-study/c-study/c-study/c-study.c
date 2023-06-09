@@ -4772,3 +4772,62 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	scanf("%d", &a);
 //	ten_to_two(a);
 //}
+
+//#include <stdio.h>
+//void odd(int a, int b) {
+//	int i = a;
+//	if (i % 2 == 1) printf("%d ", i);
+//	i++;
+//	if (i != b + 1) odd(i, b);
+//}
+//int main() {
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	odd(a, b);
+//}
+
+//#include <stdio.h>
+//int b = 0;
+//int add(int a) {
+//	int i = a;
+//	b += i;
+//	if (i != 0) add(--i);
+//	else if (i == 0) return b;
+//}
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	printf("%d", add(a));
+//}
+
+//#include <stdio.h>
+//int b = 1;
+//int factorial(int a) {
+//	b *= a--;
+//	if (a == 0) return b;
+//	factorial(a);
+//}
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	printf("%d", factorial(a));
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a = 10;
+//	printf("%d\n", a);
+//	printf("%p", &a);//%p는 주소를 출력하는 서식 문자이다.
+//		//&a는 a라는 이름을 가진 변수의 메모리 주소는? 이라는 의미이다.
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a = 10, b = 20;
+//	int* pa = &a;
+//	int* pb = &b;
+//	printf("a=%d,\t&a=%p\n", a, pa);//a안에 있는 값과 a의 주소를 가지고 있는 pa를 출력
+//	printf("b=%d,\t&b=%p\n", b, pb);//b안에 있는 값과 b의 주소를 가지고 있는 pb를 출력
+//	printf("pa=%p,\t&pa=%p\n", pa, &pa);//a의 메모리 주소를 가지고 있는 pa와 pa의 주소값을 출력
+//	printf("pa=%p,\t&pa=%p\n", pb, &pb);//b의 메모리 주소를 가지고 있는 pb와 pb의 주소값을 출력
+//}
