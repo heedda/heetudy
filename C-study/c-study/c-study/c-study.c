@@ -4831,3 +4831,13 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	printf("pa=%p,\t&pa=%p\n", pa, &pa);//a의 메모리 주소를 가지고 있는 pa와 pa의 주소값을 출력
 //	printf("pa=%p,\t&pa=%p\n", pb, &pb);//b의 메모리 주소를 가지고 있는 pb와 pb의 주소값을 출력
 //}
+
+//#include <stdio.h>
+//int main() {
+//	printf("Hello,\nWorld!");
+//}
+
+//#include <stdio.h>
+//int main() {
+//	printf("\"c:\\test\"");
+//}
