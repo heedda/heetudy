@@ -4841,3 +4841,19 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //int main() {
 //	printf("\"c:\\test\"");
 //}
+
+//#include <stdio.h>
+//int main() {
+//	int a[19][19] = { 0 }, b, c, d;
+//	scanf("%d", &b);
+//	for (int i = 1;i <= b;i++) {
+//		scanf("%d %d", &c, &d);
+//		a[c - 1][d - 1] = 1;
+//	}
+//	for (int i = 0;i < 19;i++) {
+//		for (int j = 0;j < 19;j++) {
+//			printf("%d ", a[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
