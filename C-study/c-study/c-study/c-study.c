@@ -4857,3 +4857,25 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //		printf("\n");
 //	}
 //}
+
+//컴구시간 구조체 배우기
+//#include <stdio.h>
+//#include "car.h"//사용자가 만든 헤더파일
+///*struct dial {//구조체의 자료형
+//	char name[9];//구조체의 맴버라서 맴버변수라고 부른다.
+//	int age;//맴버변수
+//	int dipendent;//맴버부현수
+//	double diQl;
+//}buyer;//구조체의 변수*/
+////맴버변수에 접근을 하려면 구조체의 변수가 필요하다
+////struct dial diQl; //이렇게 구조체의 변수를 따로 선언을 할 수 있다.
+//int main() {
+//	/*strucpy(buyer.name, "김희찬");//문자열을 복사한다는 strucpy
+//	buyer.age = 17;
+//	buyer.dipendent = 3;
+//	buyer.diQl = 10000;*/
+//	struct car mycar = { "sonata",2015,120000 };
+//	printf("%s\n", mycar.name);
+//	printf("%d\n", mycar.year);
+//	printf("%d\n", mycar.won);
+//}
