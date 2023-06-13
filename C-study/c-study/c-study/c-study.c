@@ -4879,3 +4879,21 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	printf("%d\n", mycar.year);
 //	printf("%d\n", mycar.won);
 //}
+
+//#include<stdio.h>
+//int main() {
+//	int i = 10;
+//	int* p = &i;
+//	printf("i 값: %d\n", i);  // 직접 참조
+//	printf("*p 값: %d\n", *p);  // 간접 참조
+//	//포인터를 이용해서 다른 변수의 값을 대신 참고해 와서 간접이다.
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a = 10;
+//	int* p = &a;//직접 지정
+//	printf("a의 값 : %d\n", a);
+//	*p = 20;//간접 지정
+//	printf("a의 값 : %d\n", a);
+//}
