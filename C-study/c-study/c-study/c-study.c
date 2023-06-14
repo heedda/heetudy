@@ -4897,3 +4897,21 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	*p = 20;//간접 지정
 //	printf("a의 값 : %d\n", a);
 //}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main() {
+//	int a = 0, i;
+//	char b[1234];
+//	scanf("%s", &b);//                   입력받은 값을 렌덤의 수 많큼 반복하고 그 반복한 수를 알려주는 프로그램이다람쥐
+//	for (i = 1;i <= rand();i++)
+//		printf("%s\n", b);
+//	printf("%d번 \"%s\"가 출력되었습니다.", i, b);
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int b = 3, d;
+//	d = b << 23;
+//	printf("%d", d);
+//}
