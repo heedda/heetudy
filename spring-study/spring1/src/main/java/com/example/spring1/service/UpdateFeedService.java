@@ -10,10 +10,10 @@ public class UpdateFeedService {
 
     private final FeedRepository feedRepository;
 
-    public void execute(Long id, ) {
+    public void execute(Long id) {
         Feed feed = feedRepository.findById(id)
                 .orElseThrow(RuntimeException::new);
 
-        feed.updateFeed();
+        feed.updateFeed(feed);
     }
 }

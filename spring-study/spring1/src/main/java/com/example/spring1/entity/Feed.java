@@ -32,4 +32,9 @@ public class Feed {
         this.title = title;
         this.content = content;
     }
+
+    public void updateFeed(Feed feed) {
+        this.title = title;
+        this.content = content;
+    }
 }
