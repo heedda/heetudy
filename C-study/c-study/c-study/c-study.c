@@ -4910,8 +4910,22 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //}
 
 //#include <stdio.h>
+//void comparison1(int a, int b) {
+//	if (a > b) printf("> ");
+//	else if (a == b) printf("= ");
+//	else printf("< ");
+//}
 //int main() {
-//	int b = 3, d;
-//	d = b << 23;
-//	printf("%d", d);
+//	int a[1000], b;
+//	scanf("%d", &b);
+//	for (int i = 0;i < b;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	for (int i = 0;i < b;i++) {
+//		printf("%d: ", i + 1);
+//		for (int j = 0;j < b;j++) {
+//			if (j != i) comparison1(a[i], a[j]);
+//		}
+//		printf("\n");
+//	}
 //}
