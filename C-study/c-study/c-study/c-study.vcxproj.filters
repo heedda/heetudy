@@ -23,5 +23,8 @@
     <ClInclude Include="car.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="c-study.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

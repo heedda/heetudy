@@ -4929,3 +4929,8 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //		printf("\n");
 //	}
 //}
+
+#include <stdio.h>
+int main() {
+	printf("죄송합니당");
+}
