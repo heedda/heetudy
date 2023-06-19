@@ -4930,7 +4930,59 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	}
 //}
 
+//#include <stdio.h>
+//int main() {
+//	int a[1000], b, c;
+//	scanf("%d", &b);
+//	for (int i = 0;i < b;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	for (int i = 0;i < b;i++) {
+//		for (int j = 0;j < b;j++) {
+//			printf("%d ", a[j]);
+//		}
+//		printf("\n");
+//		for (int j = 0;j < b;j++) {
+//			if (j == 0) c = a[0];
+//			a[j] = a[j + 1];
+//			if (j == b - 1) a[b - 1] = c;
+//		}
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a, c[100], i;
+//	scanf("%d", &a);
+//	for (i = 0;1;i++) {
+//		c[i] = a % 2;
+//		if (a < 2) break;
+//		a /= 2;
+//	}
+//	for (int j = i;j >= 0;j--) {
+//		printf("%d", c[j]);
+//	}
+//}
+
 #include <stdio.h>
 int main() {
-	printf("죄송합니당");
+	int a[100] = { 300 }, b, c, d;
+	scanf("%d %d", &b, &c);
+	for (int i = 0;i < b;i++) {
+		scanf("%d", &a[i]);
+		/*if (i == b - 1) a[i + 1] = a[i];*/
+	}
+	for (int k = 0;k < b;k++) {
+		for (int i = 0;i < b-1;i++) {
+			if (a[i] >= a[i + 1]) {
+				d = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = d;
+			}
+		}
+	}
+	for (int i = 0;i < b;i++) {
+		if ((i + 1) % c != 0 && a[i] != 0) printf("%d ", a[i]);
+		else if (a[i] != 0) printf("%d \n", a[i]);
+	}
 }
