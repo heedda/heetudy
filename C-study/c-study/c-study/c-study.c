@@ -5013,6 +5013,8 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	}
 //}
 
+
+
 #include <stdio.h>//                        야바위 팀 프로젝트
 #include<stdlib.h>
 #include<time.h>
@@ -5020,7 +5022,7 @@ int coin = 100;//돈
 //야바위의 난이도 만큼 보상을 더 줄것이다.
 void yaba(int n) {
 	for (int i = 1;i <= n * 3;i++) {//네모를 3줄로 출력하기 위해서
-		printf("*****\t");
+		printf("■■■■■\t");
 		if (i % n == 0) printf("\n");
 	}
 	for (int i = 1;i <= n;i++) {//야바위 번호를 지정해주기
@@ -5028,37 +5030,61 @@ void yaba(int n) {
 	}
 	printf("\n");
 }
+void printanswer(int n, int m) {
+	printf("정답은\n");
+	for (int i = 1;i <= 3;i++) {
+		for (int j = 1;j <= n;j++) {
+			if (j != m) printf("■■■■■\t");
+			else printf("□□□□□\t");
+		}
+		printf("\n");
+	}
+	printf("입니다\n");
+}
 int main() {
 	int n, random, answer;
 	int again, mony, know, again3 = 0;
+	int success = 0;
+
+
 도박:
 	if (coin <= 0) {
-		printf("돈이 없습니다");
-		return 0;
+		if (coin != 0) {
+			printf("빚을 졌습니다\n빚 : %d", coin);
+			return 0;
+		}
+		else {
+			printf("돈이 없습니다");
+			printf("coin : %d", coin);
+			return 0;
+		}
 	}
 	printf("야바위 난이도를 고르세요 : ");
-	scanf("%d", &n);//야바위 개수
+	success = 0;
+	scanf("%d", &n);//야바위 난이도
+	if (n <= 2 || n > 15) {
+		printf("서비스 이용 범위가 아닙니다\n다시 고르세요\n");
+		goto 도박;
+	}
 	yaba(n);//야바위 시각화
+
+
 렌덤:
 	srand((unsigned int)time(NULL));//렌덤으로 야바위 수 정하기위해서 현제 시간 가저오기
 	random = rand() % n + 1;//렌덤으로 수 고르기
+	if (n > 4) printf("정답중 아닌 답을 알려드릴까요? (coin 10차감)\n예 : 1 or 아니오 : 2\n");
+	scanf("%d", &know);
+	if (know == 2) goto 돈_걸기;
 
 
-//정답이_아닌답_알려주기:
-//	if (n > 4 && n <= 7) {
-//		know = rand() % n + 1;
-//		if (know == random) goto 정답이_아닌답_알려주기;
-//		printf("정답이 아닌 답은 %d입니다\n", know);
-//	}
-//	else if (n > 7) {
-//		printf("정답이 아닌 답은 : ");
-//		for (int i = 1;i <= 2;i++) {
-//			know = rand() % n + 1;
-//			if (know == random) goto 정답이_아닌답_알려주기;
-//			printf("%d\t", know);
-//		}
-//		printf("\n");
-//	}
+정답이_아닌_답_알려주기:
+	if (n > 4) {
+		know = rand() % n + 1;
+		if (know == random) goto 정답이_아닌_답_알려주기;
+		printf("정답이 아닌 답은 %d입니다\n", know);
+		coin -= 10;
+	}
+	else printf("사용 가능한 난이도가 아닙니다\n");
 
 
 돈_걸기:
@@ -5075,6 +5101,8 @@ int main() {
 		goto 도박;
 	}
 	printf("정답을 고르세요\n");
+
+
 답:
 	scanf("%d", &answer);//정답 입력
 	if (answer > n) {
@@ -5082,32 +5110,43 @@ int main() {
 		goto 답;
 	}
 	if (answer == random) {
-		printf("성공\n");//성공했을 때 성공 출력
-		if (n > 4) coin += mony * 2 + n;//난이도 만큼 성공했을 때의 보상을 높인다.
+		printf("축하드립니다\n성공입니다\n");//성공했을 때 성공 출력
+		if (n > 4) coin += mony * 2 + n;//난이도 만큼 성공했을 때의 보상을 높인다
 		else if (again3 >= 2) coin += (mony * 2 + n) - 2 * again3;
 		else if (n > 7) coin += mony * 2 + n;
 		else coin += (mony * 2 + n) * 2;
 		printf("coin : %d\n", coin);
+		success = 1;
+		goto 다시;
 	}
 	else {
 		printf("실패하셨습니다\n");//실패 했을 때 실패 출력
 	}
+
+
 다시:
-	printf("다시하겠습니까?\n네 : 1 or 아니오 : 2 or 정답 다시 고르기 : 3\n");//다시 할 것인가?
+	if(success==1) printf("다시하겠습니까?\n네 : 1 or 아니오 : 2\n");//다시 할 것인가?
+	else printf("다시하겠습니까?\n네 : 1 or 아니오 : 2 or 정답 다시 고르기 : 3\n");//다시 할 것인가?
 	//대답은 나중에 문자열로 입력받기
 	scanf("%d", &again);
 	if (again == 1) {
-		printf("정답 : %d\n", random);
+		printanswer(n, random);
+		success = 0;
 		goto 도박;//도박 부분으로 다시 돌아가기
 	}
-	else if (again == 3) {
-		printf("보상이 줄어들겁니다\n");
-		coin -= mony * 2;
+	else if (again == 3 && success == 1) {
+		printf("다시 선택하기 불가능합니다\n다시고르세요\n");
+		goto 다시;
+	}
+	else if (again == 3 && success != 1) {
+		printf("보상과 코인이 줄어들겁니다\n");
+		success = 1;
+		coin -= mony;//돈 깍기
 		again3 += 2;
 		goto 답;
 	}
 	else {
-		printf("정답 : %d\n", random);
+		printanswer(n, random);//정답 알려주기
 		printf("최종 coin : %d", coin);
 	}
 }
