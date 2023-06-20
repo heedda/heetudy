@@ -1,2 +1,5 @@
 ﻿  c-study.c
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\c-study\c-study\c-study.c(5042,1): warning C4102: '렌덤': 참조되지 않은 레이블입니다.
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\c-study\c-study\c-study.c(5095,1): warning C4102: '다시': 참조되지 않은 레이블입니다.
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\c-study\c-study\c-study.c(5033,19): warning C4101: 'know' :참조되지 않은 지역 변수입니다.
   c-study.vcxproj -> C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\c-study\x64\Debug\c-study.exe
