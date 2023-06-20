@@ -4964,25 +4964,95 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	}
 //}
 
+//#include <stdio.h>
+//int main() {
+//	int a[100] = { 300 }, b, c, d;
+//	scanf("%d %d", &b, &c);
+//	for (int i = 0;i < b;i++) {
+//		scanf("%d", &a[i]);
+//	}
+//	for (int k = 0;k < b;k++) {
+//		for (int i = 0;i < b-1;i++) {
+//			if (a[i] >= a[i + 1]) {
+//				d = a[i];
+//				a[i] = a[i + 1];
+//				a[i + 1] = d;
+//			}
+//		}
+//	}
+//	for (int i = 0;i < b;i++) {
+//		if ((i + 1) % c != 0 && a[i] != 0) printf("%d ", a[i]);
+//		else if (a[i] != 0) printf("%d \n", a[i]);
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	long long int a[10000000], n;
+//	long long int m, b[100000], yn = 0;
+//	scanf("%lld", &n);
+//	for (long long int i = 0;i < n;i++) {
+//		scanf("%lld", &a[i]);
+//	}
+//	scanf("%lld", &m);
+//	for (long long int i = 0;i < m;i++) {
+//		scanf("%lld", &b[i]);
+//	}
+//	for (long long int i = 0;i < m;i++) {
+//		for (long long int j = 0;j < n;j++) {// 코드업 미완성1430
+//			if (b[m] == a[j]) {
+//				printf("1 ");
+//				yn = 1;
+//				break;
+//			}
+//		}
+//		if (yn == 0) {
+//			printf("0 ");
+//		}
+//		else yn = 0;
+//	}
+//}
+
 #include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void yaba(int n) {
+	for (int i = 1;i <= n * 3;i++) {//네모를 3줄로 출력하기 위해서
+		printf("*****\t");
+		if (i % n == 0) printf("\n");
+	}
+	for (int i = 1;i <= n;i++) {//야바위 번호를 지정해주기
+		printf("  %d\t", i);
+	}
+}
 int main() {
-	int a[100] = { 300 }, b, c, d;
-	scanf("%d %d", &b, &c);
-	for (int i = 0;i < b;i++) {
-		scanf("%d", &a[i]);
-		/*if (i == b - 1) a[i + 1] = a[i];*/
+	int coin = 100;//걸 돈
+	//나중에 야바위의 단계가 어려워 질수록 더 보상을 많이 해 줄것이다.
+	int n, random, yes;
+	int again;
+도박:
+	scanf("%d", &n);//야바위 개수
+	if (n <= 2) {//너무 쉬운 게임을 방지하기 위해서
+		printf("다시 입력해 주세요\n");
+		goto 도박;
 	}
-	for (int k = 0;k < b;k++) {
-		for (int i = 0;i < b-1;i++) {
-			if (a[i] >= a[i + 1]) {
-				d = a[i];
-				a[i] = a[i + 1];
-				a[i + 1] = d;
-			}
-		}
+	yaba(n);//야바위 시각화
+	printf("\n정답을 고르세요\n");
+	srand((unsigned int)time(NULL));//렌덤으로 야바위 수 정하기위해서 현제 시간 가저오기
+	random = rand() % n + 1;//렌덤으로 수 고르기
+답:
+	scanf("%d", &yes);//정답 입력
+	if (yes > n) {
+		printf("신중하게 고르시기 바랍니다\n");//야바위 개수에 벗어나는 수를 입력했을 때 다시 할 수 있는 기회를 주기
+		goto 답;
 	}
-	for (int i = 0;i < b;i++) {
-		if ((i + 1) % c != 0 && a[i] != 0) printf("%d ", a[i]);
-		else if (a[i] != 0) printf("%d \n", a[i]);
+	if (yes == random) printf("성공\n");//성공했을 때 성공 출력
+	else {
+		printf("실패하셨습니다 정답 : %d\n", random);//실패 했을 때 실패 출력
 	}
+	printf("다시하겠습니까?\n네 : 1 or 아니오 : 0\n");//다시 할 것인가?
+	//대답은 나중에 문자열로 입력받기
+	scanf("%d", &again);
+	if (again == 1) goto 도박;//도박 부분으로 다시 돌아가기
+	else return 0;//끝내기
 }
