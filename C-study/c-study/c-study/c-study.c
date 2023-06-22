@@ -5021,6 +5021,18 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 #include <process.h>
 long long int coin = 100;//돈
 //야바위의 난이도 만큼 보상을 더 줄것이다.
+void 실험(int n) {
+	for (int i = 1;i <= n * 3;i++) {//네모를 3줄로 출력하기 위해서
+		printf("■■■■■\t");
+		if (i % n == 0) printf("\n");
+		if (i % 15 == 0) {
+			for (int i = 1;i <= n;i++) {//야바위 번호를 지정해주기
+				printf("  %d\t", i);
+			}
+		}
+	}
+	printf("\n");
+}
 void yaba(int n) {
 	for (int i = 1;i <= n * 3;i++) {//네모를 3줄로 출력하기 위해서
 		printf("■■■■■\t");
@@ -5067,10 +5079,11 @@ int main() {
 	int n, random, answer;//난이도, 정답값, 정답 입력
 	int again, know = 0, again3 = 0, mony;//다시하기, 알 기회, 다시 한 횟수, 걸 돈
 	int success = 0, ifprint = 0;//성공을 했거나 다시했거나, 성공을 했으면 정답을 따로 출력하지 않는 역할
-	int startcoin = coin, check = 0;
+	int startcoin = coin, check = 0, againNum = 0;//돈을 잃었는지 얻었는지 알려주는, 77777이스터에그를 사용했는지 안했는지, 다시한 횟수
 
 도박:
 	system("cls");
+	printf("다시한 횟수 : %d\n", againNum);
 	printf("coin : %d\n", coin);
 도박1:
 	if (coin <= 0) {
@@ -5093,23 +5106,35 @@ int main() {
 	}
 	random = mix(n);//야바위 섞고 답 정하기
 	yaba(n);//야바위 시각화
+	//실험(n);//15이상의 난이도도 구현할 수 있는 함수 개발 중
 
 
-렌덤:
+정답이_아닌_답_알려주기:
 	if (n > 4) {//4미만인 답에 경우 알려주면 너무 쉽기 때문에 알려주지 않는다
 		printf("정답중 아닌 답을 알려드릴까요? (coin 10차감)\n예 : 1 or 아니오 : 2\n");
 		scanf("%d", &know);//답을 알려줄지 안알려줄지 입력
 		if (know == 2) goto 돈_걸기;//아니요를 선택했을 때 이 코드 건너뛰기
 		else if (know > 2) {
 			printf("다시 골라주세요\n");
-			goto 렌덤;
+			goto 정답이_아닌_답_알려주기;
 		}
 
 
-정답이_아닌_답_알려주기:
+	/*선택한_답안_알려주기:
+		printf("정답을 알고싶은 컵을 골라주세요 : ");
+		scanf("%d", &know);
+		if (know != random) {
+			printf("정답이 아닙니다\n");
+		}
+		else {
+			printf("정답입니다\n");
+			success = 1;
+		}*/
+
+	정답이_아닌_답_알려주기2:
 		if (n > 4) {//4미만인 답에 경우 알려주면 너무 쉽기 때문에 알려주지 않는다
 			know = rand() % n + 1;
-			if (know == random) goto 정답이_아닌_답_알려주기;//정답이 아니라고 한 답이 정답일 경우를 막는다
+			if (know == random) goto 정답이_아닌_답_알려주기2;//정답이 아니라고 한 답이 정답일 경우를 막는다
 			printf("정답이 아닌 답은 %d입니다\n", know);
 			coin -= 10;
 		}
@@ -5147,16 +5172,28 @@ int main() {
 답:
 	ifprint = 0;//처음에 성공을 할지 말지 모르기때문에 0으로 표기한다
 	scanf("%d", &answer);//정답 입력
-	if (answer > n) {//야바위 개수에 벗어나는 수를 입력했을 때 다시 할 수 있는 기회를 주기
+	if (answer > n || answer < 0) {//야바위 개수에 벗어나는 수를 입력했을 때 다시 할 수 있는 기회를 주기
 		printf("신중하게 고르시기 바랍니다\n");
 		goto 답;
 	}
 	if (answer == random) {
 		printf("축하드립니다\n성공입니다\n");//성공했을 때 성공 출력
-		if (n > 4) coin += mony * 2 + n * n;//난이도 만큼 성공했을 때의 보상을 높인다
-		else if (again3 >= 2) coin += (mony * 2 + n) - 2 * again3;
-		else if (n > 7) coin += mony * 2 + n * n;
-		else coin += (mony * 2 + n * n) * 2;
+		if (n >= 4) {
+			coin += mony * 2 - ((10 - n) * 2);//난이도 만큼 성공했을 때의 보상을 높인다
+			printf("얻은 코인 : %d\n", mony * 2 + n * n);//돈을 얼마나 땄는지 보여준다
+		}
+		else if (again3 >= 2) {
+			coin += (mony * 2 + n) - 2 * again3;
+			printf("얻은 코인 : %d\n", (mony * 2 + n) - 2 * again3);
+		}
+		else if (n > 7) {
+			coin += mony * 2 + n * n;
+			printf("얻은 코인 : %d\n", mony * 2 + n * n);
+		}
+		else {
+			coin += (mony * 2 + n * n) * 2;
+			printf("얻은 코인 : %d\n", (mony * 2 + n * n) * 2);
+		}
 		printf("coin : %lld\n", coin);
 		ifprint = 1;//이미 정답을 아는 경우 또 다시 정답을 출력 할 필요가 없을 거 같다
 		success = 1;//정답을 입력했으면 다시 하면 정답을 알고 있기 때문에 방지한다
@@ -5184,6 +5221,7 @@ int main() {
 			if (n <= 4) Sleep(1500);
 			else Sleep(2500);
 		}
+		againNum++;
 		goto 도박;//도박 부분으로 다시 돌아가기
 	}
 	else if (again == 3 && success == 1) {
