@@ -1,0 +1,5 @@
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\yaba\yaba\obj\Debug\net6.0\yaba.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\yaba\yaba\obj\Debug\net6.0\yaba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\yaba\yaba\obj\Debug\net6.0\yaba.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\yaba\yaba\obj\Debug\net6.0\yaba.AssemblyInfo.cs
+C:\Users\user\OneDrive\바탕 화면\github\heetudy\C-study\yaba\yaba\obj\Debug\net6.0\yaba.csproj.CoreCompileInputs.cache
