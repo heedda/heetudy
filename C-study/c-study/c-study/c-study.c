@@ -6143,62 +6143,86 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //    getchar();
 //}
 
-#include <stdio.h>
-#include <time.h>
-#include<Windows.h>
-void timer() {
-	int hour, min, sec;
-	int hour1, min1, sec1;
-scan:
-	scanf("%d %d %d", &hour, &min, &sec);
-	if (hour >= 60 || sec >= 60 || min >= 60) {
-		printf("잘못된 시간입니다.\n다시입력하세요\n");
-		goto scan;
-	}
-	hour1 = hour;
-	min1 = min;
-	sec1 = sec;
-	for (int i = sec + (min * 60) + (hour * 3600);i >= 0;i--) {
-		system("cls");
-		printf("%d %d %d\n", hour1, min1, sec1);
-		sec1--;
-		if (sec1 == -1) {
-			sec1 = 59;
-			min1--;
-		}
-		if (min1 == -1) {
-			min1 = 59;
-			hour1--;
-		}
-		Sleep(1000);
-//엔터를 눌렀을 때 실행이 중지되게 한다.
-//방법은 여러가지가 있다 Sleep함수가 끝날때 if문으로 검문하는가와 또 다른 코드를 타이머와 동시에 실행시키게 해서 엔터를 눌렀을 때 종료되게 하는 것이다.
-	}
-	printf("\n타이머 끝");
-}
-void stopW() {
-	int hour = 0, min = 0, sec = 0;
-	while (1)
-	{
-		system("cls");
-		printf("%d %d %d", hour, min, sec);
-		sec++;
-		if (sec == 60) {
-			min++;
-			sec = 0;
-		}
-		if (min == 60) {
-			hour++;
-			min = 0;
-		}
-		Sleep(1000);
-	}
-}
+//#include <stdio.h>
+//#include <time.h>
+//#include<Windows.h>
+//void timer() {
+//	int hour, min, sec;
+//	int hour1, min1, sec1;
+//scan:
+//	scanf("%d %d %d", &hour, &min, &sec);
+//	if (hour >= 60 || sec >= 60 || min >= 60) {
+//		printf("잘못된 시간입니다.\n다시입력하세요\n");
+//		goto scan;
+//	}
+//	hour1 = hour;
+//	min1 = min;
+//	sec1 = sec;
+//	for (int i = sec + (min * 60) + (hour * 3600);i >= 0;i--) {
+//		system("cls");
+//		printf("%d %d %d\n", hour1, min1, sec1);
+//		sec1--;
+//		if (sec1 == -1) {
+//			sec1 = 59;
+//			min1--;
+//		}
+//		if (min1 == -1) {
+//			min1 = 59;
+//			hour1--;
+//		}
+//		Sleep(1000);
+////엔터를 눌렀을 때 실행이 중지되게 한다.
+////방법은 여러가지가 있다 Sleep함수가 끝날때 if문으로 검문하는가와 또 다른 코드를 타이머와 동시에 실행시키게 해서 엔터를 눌렀을 때 종료되게 하는 것이다.
+//	}
+//	printf("\n타이머 끝");
+//}
+//void stopW() {
+//	int hour = 0, min = 0, sec = 0;
+//	while (1)
+//	{
+//		system("cls");
+//		printf("%d %d %d", hour, min, sec);
+//		sec++;
+//		if (sec == 60) {
+//			min++;
+//			sec = 0;
+//		}
+//		if (min == 60) {
+//			hour++;
+//			min = 0;
+//		}
+//		Sleep(1000);
+//	}
+//}
+//
+//int main() {
+//	printf("어떤 기능을 실행할 지 입력하세요\n1. 타이머\t2. 스톱워치\n");
+//	int choice;
+//	scanf("%d", &choice);
+//	if (choice == 1) timer();
+//	else if (choice == 2) stopW();
+//}
 
+#include <stdio.h>
 int main() {
-	printf("어떤 기능을 실행할 지 입력하세요\n1. 타이머\t2. 스톱워치\n");
-	int choice;
-	scanf("%d", &choice);
-	if (choice == 1) timer();
-	else if (choice == 2) stopW();
+	int testcase, aB, bB, aN[2000], bN[2000], eat[10] = { 0 };
+	scanf("%d", &testcase);
+	for (int i = 1;i <= testcase;i++) {
+		scanf("%d %d", &aB, &bB);
+		for (int j = 0;j < aB;j++) {
+			scanf("%d", &aN[j]);
+		}
+		for (int j = 0;j < bB;j++) {
+			scanf("%d", &bN[j]);
+		}
+		eat[i - 1] = 0;
+		for (int j = 0;j < aB;j++) {
+			for (int k = 0;k < bB;k++) {
+				if (aN[j] > bN[k]) eat[i - 1]++;
+			}
+		}
+	}
+	for (int i = 0;i < testcase;i++) {
+		printf("%d\n", eat[i]);
+	}
 }
