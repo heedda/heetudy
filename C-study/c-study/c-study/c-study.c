@@ -6203,26 +6203,44 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	else if (choice == 2) stopW();
 //}
 
+//#include <stdio.h>
+//int main() {
+//	int testcase, aB, bB, aN[2000], bN[2000], eat[10000] = { 0 };
+//	scanf("%d", &testcase);
+//	for (int i = 1;i <= testcase;i++) {
+//		scanf("%d %d", &aB, &bB);
+//		for (int j = 0;j < aB;j++) {
+//			scanf("%d", &aN[j]);
+//		}
+//		for (int j = 0;j < bB;j++) {
+//			scanf("%d", &bN[j]);
+//		}
+//		eat[i - 1] = 0;
+//		for (int j = 0;j < aB;j++) {
+//			for (int k = 0;k < bB;k++) {
+//				if (aN[j] > bN[k]) eat[i - 1]++;
+//			}
+//		}
+//	}
+//	for (int i = 0;i < testcase;i++) {
+//		printf("%d\n", eat[i]);
+//	}
+//}
+
 #include <stdio.h>
 int main() {
-	int testcase, aB, bB, aN[2000], bN[2000], eat[10] = { 0 };
-	scanf("%d", &testcase);
-	for (int i = 1;i <= testcase;i++) {
-		scanf("%d %d", &aB, &bB);
-		for (int j = 0;j < aB;j++) {
-			scanf("%d", &aN[j]);
-		}
-		for (int j = 0;j < bB;j++) {
-			scanf("%d", &bN[j]);
-		}
-		eat[i - 1] = 0;
-		for (int j = 0;j < aB;j++) {
-			for (int k = 0;k < bB;k++) {
-				if (aN[j] > bN[k]) eat[i - 1]++;
-			}
+	char miro[100][100];
+	int num, num1, out = 0;
+	scanf("%d %d", &num, &num1);
+	for (int i = 0;i < num;i++) {
+		for (int j = 0;j < num1;j++) {
+			scanf(" %c", &miro[i][j]);
 		}
 	}
-	for (int i = 0;i < testcase;i++) {
-		printf("%d\n", eat[i]);
+	for (int i = 0;i < num;i++) {
+		for (int j = 0;j < num1;j++) {
+			printf("%c", miro[i][j]);
+		}
+		printf("\n");
 	}
 }
