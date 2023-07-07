@@ -7,5 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UpdateFeedRequest {
 
+    private String title;
+    private String content;
 
 }
