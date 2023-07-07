@@ -6227,9 +6227,62 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	}
 //}
 
-#include <stdio.h>
-int main() {
-	int a;
-	scanf("%d", &a);
-	printf("%d", a << 1);
-}
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	printf("%d", a << 1);
+//}
+
+//#include <stdio.h>
+//int main() {
+//	printf("%d", 900);
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int arr[3] = { 0, 1, 2 };
+//	printf("  배열의 이름 : %p \n", arr);//배열의 이름은 배열의 시작주소값이랑 같다
+//	printf("arr[0]의 주소 : %p \n", &arr[0]);
+//	printf("arr[1]의 주소 : %p \n", &arr[1]);//주소가 4씩 차이가 난다
+//	printf("arr[2]의 주소 : %p \n", &arr[2]);//int형이라서 4byte만큼 차이가 나는 것이다
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int a[] = { 10, 20, 30, 40, 50 };
+//	printf("a = %p\n", a);
+//	printf("a + 1 = %p\n", a + 1);//포인터 변수의 자료형 크기 만큼 곱해진 다음 더해진다(int 형이 4byte라서 4가 더해진 것)
+//	printf("*a = %d\n", *a);
+//	printf("*(a + 1) = %d\n", *(a + 1));
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int arr[3] = { 15, 25, 35 };
+//	int* ptr = arr; // int *ptr = &arr[0];과 동일한 문장
+//
+//	printf("   ptr : %p,   arr : %p, &arr[0] : %p\n", ptr, arr, &arr[0]);
+//	printf(" ptr+1 : %p, arr+1 : %p, &arr[1] : %p\n", ptr + 1, arr + 1, &arr[1]);
+//	printf(" ptr+2 : %p, arr+2 : %p, &arr[2] : %p\n", ptr + 2, arr + 2, &arr[2]);
+//
+//	printf("\n");
+//
+//	/*for (int i = 0;i < 3;i++) {
+//		*(arr + i) += 5;
+//	}*/
+//	*arr += 5;
+//
+//	printf("arr[0] : %d, ptr[0] : %d, *(ptr+0) : %d\n", arr[0], ptr[0], *(ptr + 0));
+//	printf("arr[1] : %d, ptr[1] : %d, *(ptr+1) : %d\n", arr[1], ptr[1], *(ptr + 1));
+//	printf("arr[2] : %d, ptr[2] : %d, *(ptr+2) : %d\n", arr[2], ptr[2], *(ptr + 2));
+//
+//	return 0;
+//}
