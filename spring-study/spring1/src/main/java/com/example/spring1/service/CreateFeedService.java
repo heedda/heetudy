@@ -17,10 +17,10 @@ public class CreateFeedService {
     @Transactional
     public void execute(CreateFeedRequest request){
         feedRepository.save(
-                Feed.builder()
-                        .title(request.getTitle())
-                        .content(request.getContent())
-                        .build()
+            Feed.builder()
+                .title(request.getTitle())
+                .content(request.getContent())
+                .build()
         );
     }
 }
