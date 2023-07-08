@@ -13,7 +13,7 @@ public class CreateFeedService {
     private final FeedRepository feedRepository;
 
     @Transactional
-    public void excute(CreateFeedRequest request){
+    public void execute(CreateFeedRequest request){
         feedRepository.save(
                 Feed.builder()
                         .title(request.getTitle())
