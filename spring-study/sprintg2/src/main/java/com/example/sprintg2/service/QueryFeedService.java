@@ -14,7 +14,7 @@ public class QueryFeedService {
 
     @Transactional
     public FeedResponse execute(Long id){
-        Feed feed =feedRepository.findById(Long id)
+        Feed feed =feedRepository.findById(id)
                 .orElseThrow(RuntimeException::new);
 
         return FeedResponse.builder()

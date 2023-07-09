@@ -1,6 +1,7 @@
 package com.example.sprintg2.controller.dto;
 
 import com.example.sprintg2.controller.dto.request.CreateFeedRequest;
+import com.example.sprintg2.controller.dto.request.UpdateFeedRequest;
 import com.example.sprintg2.controller.dto.response.FeedResponse;
 import com.example.sprintg2.controller.service.CreateFeedService;
 import com.example.sprintg2.controller.service.CreateFeedServise;
@@ -29,17 +30,17 @@ public class FeedController {
     }
 
     @GetMapping("/{id}")
-    public FeedResponse getFeed(@PathVariable("id") Long id){
+    public FeedResponse getFeed(@PathVariable Long id){
         return queryFeedService.execute(id);
     }
 
     @GetMapping("/{id}")
-    public FeedResponse getFeed(@PathVariable("id") Long id){
-        return deleteFeedService.execute(id);
+    public void deleteFeed(@PathVariable Long id){
+        deleteFeedService.execute(id);
     }
 
     @GetMapping("/{id}")
-    public FeedResponse getFeed(@PathVariable("id") Long id){
-        return updateFeedService.execute(id);
+    public void updateFeed(@PathVariable("id") Long id, @RequestBody UpdateFeedRequest updateFeedRequest){
+        updateFeedService.execute(id, updateFeedRequest);
     }
 }

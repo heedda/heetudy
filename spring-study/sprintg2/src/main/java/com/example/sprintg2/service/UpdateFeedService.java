@@ -15,7 +15,7 @@ public class UpdateFeedService {
     private final FeedRepository feedRepository;
 
     @Transactional
-    public FeedResponse execute(Long id, UpdateFeedRequest request){
+    public void execute(Long id, UpdateFeedRequest request) {
         Feed feed = feedRepository.findById(id)
                 .orElseThrow(RuntimeException::new);
 

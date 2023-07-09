@@ -13,7 +13,7 @@ public class DeleteFeedService {
 
     @Transactional
     public void execute(Long id){
-        Feed feed = feedRepository.findById(Long id)
+        Feed feed = feedRepository.findById(id)
                 .orElseThrow(RuntimeException::new);
 
         feedRepository.delete(feed);
