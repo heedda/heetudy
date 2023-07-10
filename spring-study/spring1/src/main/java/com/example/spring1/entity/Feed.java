@@ -27,7 +27,7 @@ public class Feed {
     public Feed(String title, String content) {
         this.title = title;
         this.content = content;
-
+    }
     public void updateFeed(String title, String content){
         this.title = title;
         this.content = content;

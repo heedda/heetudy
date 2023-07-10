@@ -32,21 +32,6 @@ public class FeedController {
         createFeedService.execute(request);
     }
 
-    @GetMapping("/yabbi/{yabbi-value}")
-    public Integer getYabbi(@PathVariable("yabbi-value") Integer yabbi) {
-        return yabbi;
-    }
-
-    @GetMapping("/name")//without Param
-    public NameResponse getName(@RequestParam("name") String name){
-        return new NameResponse(name);
-    }
-
-    @GetMapping("/number/{num}")
-    public NumResponse getNum(@PathVariable("num") Integer number){
-        return new NumResponse(number);
-    }
-
     @GetMapping("/{id}")
     public FeedResponse getFeed(@PathVariable("id") Long id) {
         return queryFeedService.execute(id);
@@ -56,8 +41,23 @@ public class FeedController {
     public void deleteFeed(@PathVariable("id") Long id){
         deleteFeedService.execute(id);
     }
+
     @PutMapping("/{id}")
     public void updateFeed(@PathVariable("id") Long id, @RequestBody @Valid UpdateFeedRequest request) {
         updateFeedService.execute(id, request);
     }
+//    @GetMapping("/yabbi/{yabbi-value}")
+//    public Integer getYabbi(@PathVariable("yabbi-value") Integer yabbi) {
+//        return yabbi;
+//    }
+//
+//    @GetMapping("/name")//without Param
+//    public NameResponse getName(@RequestParam("name") String name){
+//        return new NameResponse(name);
+//    }
+//
+//    @GetMapping("/number/{num}")
+//    public NumResponse getNum(@PathVariable("num") Integer number){
+//        return new NumResponse(number);
+//    }
 }

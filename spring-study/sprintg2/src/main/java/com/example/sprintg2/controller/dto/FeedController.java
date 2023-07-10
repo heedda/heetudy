@@ -30,12 +30,12 @@ public class FeedController {
     }
 
     @GetMapping("/{id}")
-    public FeedResponse getFeed(@PathVariable Long id){
+    public FeedResponse getFeed(@PathVariable("id") Long id){
         return queryFeedService.execute(id);
     }
 
     @GetMapping("/{id}")
-    public void deleteFeed(@PathVariable Long id){
+    public void deleteFeed(@PathVariable("id") Long id){
         deleteFeedService.execute(id);
     }
 
