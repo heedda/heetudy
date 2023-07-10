@@ -6286,3 +6286,55 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //
 //	return 0;
 //}
+
+#include <stdio.h>
+int main() {
+	int a;
+	scanf("%d", &a);
+	for (int i = 1;i <= a / 2 + 1;i++) {
+		if (i == 1) {
+			for (int j = 1;j <= a;j++) {
+				printf("*");
+			}
+			printf("\n");
+		}
+		else {
+			printf("*");
+			for (int j = 1;j < i - 1;j++) {
+				printf(" ");
+			}
+			printf("*");
+			for (int j = 1;j <= a - (i * 2);j++) {
+				printf(" ");
+			}
+			if (i != a / 2 + 1) printf("*");
+			for (int j = 1;j < i - 1;j++) {
+				printf(" ");
+			}
+			printf("*\n");
+		}
+	}
+	for (int i = a / 2;i > 0;i--) {
+		if (i == 1) {
+			for (int j = 1;j <= a;j++) {
+				printf("*");
+			}
+			printf("\n");
+		}
+		else {
+			printf("*");
+			for (int j = 1;j < i - 1;j++) {
+				printf(" ");
+			}
+			printf("*");
+			for (int j = 1;j <= a - (i * 2);j++) {
+				printf(" ");
+			}
+			if (i != a / 2 + 1) printf("*");
+			for (int j = 1;j < i - 1;j++) {
+				printf(" ");
+			}
+			printf("*\n");
+		}
+	}
+}
