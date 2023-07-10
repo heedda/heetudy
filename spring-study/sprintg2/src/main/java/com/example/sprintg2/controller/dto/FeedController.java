@@ -3,12 +3,12 @@ package com.example.sprintg2.controller.dto;
 import com.example.sprintg2.controller.dto.request.CreateFeedRequest;
 import com.example.sprintg2.controller.dto.request.UpdateFeedRequest;
 import com.example.sprintg2.controller.dto.response.FeedResponse;
-import com.example.sprintg2.controller.service.CreateFeedService;
-import com.example.sprintg2.controller.service.CreateFeedServise;
+import com.example.sprintg2.service.CreateFeedService;
 import com.example.sprintg2.service.DeleteFeedService;
 import com.example.sprintg2.service.QueryFeedService;
 import com.example.sprintg2.service.UpdateFeedService;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,18 +29,18 @@ public class FeedController {
         createFeedService.execute(request);
     }
 
-    @GetMapping("/{id}")
-    public FeedResponse getFeed(@PathVariable("id") Long id){
+    @GetMapping("/{feed-id}")
+    public FeedResponse getFeed(@PathVariable("feed-id") Long id){
         return queryFeedService.execute(id);
     }
 
-    @GetMapping("/{id}")
-    public void deleteFeed(@PathVariable("id") Long id){
+    @DeleteMapping("/{feed-id}")
+    public void deleteFeed(@PathVariable("feed-id") Long id){
         deleteFeedService.execute(id);
     }
 
-    @GetMapping("/{id}")
-    public void updateFeed(@PathVariable("id") Long id, @RequestBody UpdateFeedRequest updateFeedRequest){
+    @PutMapping("/{feed-id}")
+    public void updateFeed(@PathVariable("feed-id") Long id, @RequestBody UpdateFeedRequest updateFeedRequest){
         updateFeedService.execute(id, updateFeedRequest);
     }
 }
