@@ -6287,54 +6287,227 @@ else if나 if문에서 참이냐 거짓이냐로 판단을 할 수 있다는 것
 //	return 0;
 //}
 
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	for (int i = 1;i <= a / 2 + 1;i++) {
+//		if (i == 1) {
+//			for (int j = 1;j <= a;j++) {
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//		else {
+//			printf("*");
+//			for (int j = 1;j < i - 1;j++) {
+//				printf(" ");
+//			}
+//			printf("*");
+//			for (int j = 1;j <= a - (i * 2);j++) {
+//				printf(" ");
+//			}
+//			if (i != a / 2 + 1) printf("*");
+//			for (int j = 1;j < i - 1;j++) {
+//				printf(" ");
+//			}
+//			printf("*\n");
+//		}
+//	}
+//	for (int i = a / 2;i > 0;i--) {
+//		if (i == 1) {
+//			for (int j = 1;j <= a;j++) {
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//		else {
+//			printf("*");
+//			for (int j = 1;j < i - 1;j++) {
+//				printf(" ");
+//			}
+//			printf("*");
+//			for (int j = 1;j <= a - (i * 2);j++) {
+//				printf(" ");
+//			}
+//			if (i != a / 2 + 1) printf("*");
+//			for (int j = 1;j < i - 1;j++) {
+//				printf(" ");
+//			}
+//			printf("*\n");
+//		}
+//	}
+//}
+
+//#include <stdio.h>
+//void squere(int width, int height);
+//int main() {
+//	int width, height;
+//	scanf("%d %d", &width, &height);
+//	squere(width, height);
+//}
+//void squere(int width, int height) {
+//	for (int i = 1;i <= height;i++) {
+//		if (i == 1 || i == height) {
+//			for (int j = 1;j <= width;j++) {
+//				printf("* ");
+//			}
+//		}
+//		else {
+//			printf("* ");
+//			for (int j = 1;j <= width - 2;j++) {
+//				printf("  ");
+//			}
+//			printf("* ");
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int antCave[10][10];//개미 굴 입력
+//	int anti = 1, antj = 1;//개미의 이동 위치
+//	for (int i = 0;i < 10;i++) {
+//		for (int j = 0;j < 10;j++) {
+//			scanf("%d", &antCave[i][j]);
+//		}
+//	}
+//	for (int i = 0; i < 10; i++){
+//		for (int j = 0;j < 10;j++) {
+//			if (antCave[anti][antj] == 2) {
+//				antCave[anti][antj] = 9;
+//				goto print;
+//			}
+//			else if (antCave[anti + 1][antj] == 1 && antCave[anti][antj + 1] == 1) {
+//				antCave[anti][antj] = 9;
+//				goto print;
+//			}
+//			if (antCave[anti][antj + 1] == 0|| antCave[anti][antj + 1] == 2) {
+//				antCave[anti][antj] = 9;
+//				antj++;
+//			}
+//			else if (antCave[anti + 1][antj] == 0 || antCave[anti + 1][antj] == 2) {
+//				antCave[anti][antj] = 9;
+//				anti++;
+//			}
+//		}
+//	}
+//	print:
+//	for (int i = 0;i < 10;i++) {
+//		for (int j = 0;j < 10;j++) {
+//			printf("%d ", antCave[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	for (int i = 1;i <= 9;i++) {
+//		for (int j = 2;j <= 5;j++) {
+//			printf("%d x %d = %2d\t", j, i, i * j);
+//		}
+//		printf("\n");
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a, b, ubaksuResult = 0, ubaksuNum = 0, j, k;
+//	scanf("%d %d", &a, &b);
+//	for (int i = a;i <= b;i++) {
+//		k = i;
+//		j = 1;
+//		while (k != 1) {
+//			j++;
+//			if (k % 2 == 0) k /= 2;
+//			else k = k * 3 + 1;
+//		}
+//		if (j > ubaksuResult) {
+//			ubaksuNum = i;
+//			ubaksuResult = j;
+//		}
+//	}
+//	printf("%d %d", ubaksuNum, ubaksuResult);
+//}
+
+//c언어
+
+//#include <stdio.h>
+//int main() {
+//	int y;
+//	scanf("%d", &y);
+//	if (y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)) {
+//		printf("윤년");
+//	}
+//	else printf("평년");
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	printf("Number? : ");
+//	scanf("%d", &a);
+//	switch (a)
+//	{
+//	case 1:
+//		printf("개");
+//		break;
+//	case 2:
+//		printf("고양이");
+//		break;
+//	case 3:
+//		printf("병아리");
+//		break;
+//	default:
+//		printf("모르겠습니다.");
+//		break;
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a;
+//	scanf("%d", &a);
+//	switch (a)
+//	{
+//	case 1:
+//	case 3:
+//	case 5:
+//	case 7:
+//	case 8:
+//	case 10:
+//	case 12:
+//		printf("31");
+//		break;
+//	case 2:
+//		printf("28");
+//	default:
+//		printf("30");
+//		break;
+//	}
+//}
+
+//#include <stdio.h>
+//int main() {
+//	int a, odd = 0, even = 0;
+//	do
+//	{
+//		scanf("%d", &a);
+//		if (a % 2 != 0) odd++;
+//		else even++;
+//
+//	} while (a != 0);
+//	even--;
+//	printf("odd : %d\neven : %d", odd, even);
+//}
+
 #include <stdio.h>
 int main() {
-	int a;
-	scanf("%d", &a);
-	for (int i = 1;i <= a / 2 + 1;i++) {
-		if (i == 1) {
-			for (int j = 1;j <= a;j++) {
-				printf("*");
-			}
-			printf("\n");
-		}
-		else {
-			printf("*");
-			for (int j = 1;j < i - 1;j++) {
-				printf(" ");
-			}
-			printf("*");
-			for (int j = 1;j <= a - (i * 2);j++) {
-				printf(" ");
-			}
-			if (i != a / 2 + 1) printf("*");
-			for (int j = 1;j < i - 1;j++) {
-				printf(" ");
-			}
-			printf("*\n");
-		}
-	}
-	for (int i = a / 2;i > 0;i--) {
-		if (i == 1) {
-			for (int j = 1;j <= a;j++) {
-				printf("*");
-			}
-			printf("\n");
-		}
-		else {
-			printf("*");
-			for (int j = 1;j < i - 1;j++) {
-				printf(" ");
-			}
-			printf("*");
-			for (int j = 1;j <= a - (i * 2);j++) {
-				printf(" ");
-			}
-			if (i != a / 2 + 1) printf("*");
-			for (int j = 1;j < i - 1;j++) {
-				printf(" ");
-			}
-			printf("*\n");
-		}
-	}
+	int num, sum = 0, avg, i;
+	do
+	{
+		scanf("%d", &num);
+	} while (num >= 100);
 }
